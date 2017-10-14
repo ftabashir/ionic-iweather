@@ -27,7 +27,8 @@ export class SettingsPage {
   }
 
   saveForm(){
-    this.storage.set("city", this.city);
-    this.navCtrl.push(HomePage);
+    this.storage.set("city", this.city).then(()=>{
+      this.navCtrl.push(HomePage);
+    });
   }
 }
